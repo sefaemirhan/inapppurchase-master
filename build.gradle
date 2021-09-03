@@ -31,7 +31,7 @@ allprojects {
         licenseSrc {
             java {
                 srcDir 'src'
-                exclude 'com/sefaemirhan/android/iab/v3/Security.java'
+                exclude 'com/anjlab/android/iab/v3/Security.java'
                 exclude 'com/android/vending/billing/IInAppBillingService.aidl'
             }
         }
