@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.7.0'
+    }
+}
+
+allprojects {
+    apply plugin: 'license'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+
+    sourceSets {
+        licenseSrc {
+            java {
+                srcDir 'src'
+                exclude 'com/sefaemirhan/android/iab/v3/Security.java'
+                exclude 'com/android/vending/billing/IInAppBillingService.aidl'
+            }
+        }
+    }
+
+    license {
+        header rootProject.file('LICENSE')
+        strictCheck true
+    }
+}
